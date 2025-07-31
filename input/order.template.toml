@@ -1,0 +1,15 @@
+# Rename this file to order.toml for the scripts to use the provided values when issuing commands.
+#
+# Additional explanation of the input properties:
+#
+#   amount  -- Use positive amount value for long, negative for short
+#   tif     -- Use 'Alo' to ensure maker order, or 'Gtc' when forcing a taker order
+#   orderId -- Required only when updating or canceling an existing order
+
+coin = 'ETH'
+price = 100
+amount = 1
+isReduceOnly = false
+tif = 'Alo'
+
+orderId = 111111111111

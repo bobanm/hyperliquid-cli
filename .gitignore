@@ -1,0 +1,12 @@
+credentials.toml
+order.toml
+
+# dependencies (bun install)
+node_modules
+
+# IDEs
+.vscode
+.idea
+
+# Finder (MacOS) folder config
+.DS_Store
