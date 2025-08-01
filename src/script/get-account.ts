@@ -30,7 +30,8 @@ if (account.assetPositions.length > 0) {
             removeDecimals(p.positionValue).padStart(8).padEnd(11),
             p.entryPx.padEnd(10),
             Number(p.liquidationPx ?? 0).toPrecision(5).padEnd(9),
-            removeDecimals(p.cumFunding.sinceOpen).padStart(7),
+            // Invert funding sign, because the response shows received funding as negative
+            removeDecimals(-Number(p.cumFunding.sinceOpen)).padStart(7),
             removeDecimals(p.unrealizedPnl).padStart(9),
         )
     }
