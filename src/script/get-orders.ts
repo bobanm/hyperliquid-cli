@@ -1,9 +1,8 @@
 import * as hl from '@nktkas/hyperliquid'
 import { TablePrinter } from '@bobanm/table-printer'
 import { NiceDate } from '@bobanm/nice-utils'
+import { infoClient } from '../clients'
 import credentials from '../../input/credentials.toml'
-
-const infoClient = new hl.InfoClient({ transport: new hl.HttpTransport() })
 
 const openOrders = await infoClient.openOrders({ user: credentials.address })
 

@@ -1,13 +1,8 @@
 import * as hl from '@nktkas/hyperliquid'
-import credentials from '../../input/credentials.toml'
-import order from '../../input/order.toml'
+import { exchangeClient } from '../clients'
 import { formatOrder, type Order } from '../util/helpers'
 import { handleError } from '../util/error'
-
-const exchangeClient = new hl.ExchangeClient({
-    wallet: credentials.key,
-    transport: new hl.HttpTransport()
-})
+import order from '../../input/order.toml'
 
 const modifyOrder: hl.ModifyParameters = {
     oid: order.orderId,
