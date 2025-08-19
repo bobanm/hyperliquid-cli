@@ -1,7 +1,7 @@
 import * as hl from '@nktkas/hyperliquid'
 import { TablePrinter } from '@bobanm/table-printer'
+import { NiceNumber } from '@bobanm/nice-utils'
 import credentials from '../../input/credentials.toml'
-import { removeDecimals } from '../util/helpers'
 
 const infoClient = new hl.InfoClient({ transport: new hl.HttpTransport() })
 
@@ -30,18 +30,18 @@ if (account.assetPositions.length > 0) {
         positionsTable.addRow([
             p.coin,
             p.szi,
-            removeDecimals(p.positionValue),
+            new NiceNumber(p.positionValue).toSimpleCurrency(),
             p.entryPx,
             Number(p.liquidationPx ?? 0).toPrecision(5),
             // Invert funding sign, because the response shows received funding as negative
-            removeDecimals(-Number(p.cumFunding.sinceOpen)),
-            removeDecimals(p.unrealizedPnl),
+            new NiceNumber(-Number(p.cumFunding.sinceOpen)).toSimpleCurrency(),
+            new NiceNumber(p.unrealizedPnl).toSimpleCurrency(),
         ])
     }
 
     console.log(positionsTable.toString())
 }
 
-console.log(`All positions value  $ ${removeDecimals(account.marginSummary.totalNtlPos).padStart(6)}`)
-console.log(`Total unrealized PnL $ ${removeDecimals(totalUnrealizedPnl).padStart(6)}`)
-console.log(`Net account size     $ ${removeDecimals(account.marginSummary.accountValue).padStart(6)}`)
+console.log(`All positions value  $ ${new NiceNumber(account.marginSummary.totalNtlPos).toSimpleCurrency().padStart(7)}`)
+console.log(`Total unrealized PnL $ ${new NiceNumber(totalUnrealizedPnl).toSimpleCurrency().padStart(7)}`)
+console.log(`Net account size     $ ${new NiceNumber(account.marginSummary.accountValue).toSimpleCurrency().padStart(7)}`)

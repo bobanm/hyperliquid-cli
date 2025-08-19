@@ -8,6 +8,7 @@
     "typescript": "^5.9.2"
   },
   "dependencies": {
+    "@bobanm/nice-utils": "^0.0.0",
     "@bobanm/table-printer": "^0.0.0",
     "@nktkas/hyperliquid": "^0.24.0"
   }

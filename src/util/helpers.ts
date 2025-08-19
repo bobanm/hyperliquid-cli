@@ -27,16 +27,6 @@ export function getCoinAssetId(coinSymbol: string): number {
 }
 
 /**
- * When showing PnL in USD, it is cleaner not to bother with cents.
- * @param amount - Amount that includes decimals, e.g. 1234.56
- * @returns Amount that excludes decimals, e.g. 1234
- */
-export function removeDecimals(amount: string | number): string {
-
-    return Number(amount).toFixed(0)
-}
-
-/**
  * @param order - Order object specified in input/order.toml
  * @returns Order object in the shape that SDK expects.
 */

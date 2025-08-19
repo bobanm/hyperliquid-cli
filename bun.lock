@@ -4,6 +4,7 @@
     "": {
       "name": "hyperliquid",
       "dependencies": {
+        "@bobanm/nice-utils": "^0.0.0",
         "@bobanm/table-printer": "^0.0.0",
         "@nktkas/hyperliquid": "^0.24.0",
       },
@@ -16,6 +17,8 @@
     },
   },
   "packages": {
+    "@bobanm/nice-utils": ["@bobanm/nice-utils@0.0.0", "", { "peerDependencies": { "typescript": ">=5.0.0" } }, "sha512-MXRZsH9eoeqzkMgcq5zC3vHc20rAgfL1F6eFGKNzDomzFaaW3MypgFWLDNDIn8UEnjRwS3ibbcUuepJZiKokMw=="],
+
     "@bobanm/table-printer": ["@bobanm/table-printer@0.0.0", "", { "peerDependencies": { "typescript": ">=5.0.0" } }, "sha512-bZlJO4BnM6oRcxQqTT83cTwzgZb83gVI0xZ4n+DwOoa8IqGeW+iKKLn027nY2nkJh6u8waGsqsT8NRfbM/Aikg=="],
 
     "@msgpack/msgpack": ["@msgpack/msgpack@3.1.2", "", {}, "sha512-JEW4DEtBzfe8HvUYecLU9e6+XJnKDlUAIve8FvPzF3Kzs6Xo/KuZkZJsDH0wJXl/qEZbeeE7edxDNY3kMs39hQ=="],
