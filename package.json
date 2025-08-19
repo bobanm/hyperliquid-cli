@@ -2,12 +2,13 @@
   "name": "hyperliquid-cli",
   "type": "module",
   "devDependencies": {
-    "@types/bun": "^1.2.19"
+    "@types/bun": "^1.2.20"
   },
   "peerDependencies": {
-    "typescript": "^5.8.3"
+    "typescript": "^5.9.2"
   },
   "dependencies": {
+    "@bobanm/table-printer": "^0.0.0",
     "@nktkas/hyperliquid": "^0.24.0"
   }
 }
