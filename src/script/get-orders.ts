@@ -15,7 +15,7 @@ if (openOrders.length === 0) {
 console.log('\nOpen orders\n')
 
 const ordersTable = new TablePrinter([
-    ['DATE', 'COIN', 'SIDE', 'PRICE', 'O.SIZE', 'SIZE'],
+    ['DATE', 'COIN', 'SIDE', 'PRICE', 'O.SIZE', 'SIZE', 'ID'],
 ])
 
 let orderCount = 0
@@ -24,10 +24,11 @@ for (const order of openOrders) {
     ordersTable.addRow([
         new NiceDate(order.timestamp).toFineString(true, true),
         order.coin,
-        order.side,
+        order.side === 'B' ? 'buy' : 'sell',
         order.limitPx,
         order.origSz,
         order.sz,
+        order.oid,
     ])
 
     orderCount += 1
