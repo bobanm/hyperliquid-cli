@@ -40,6 +40,9 @@ if (account.assetPositions.length > 0) {
     console.log(positionsTable.toString())
 }
 
+const leverage = Number(account.marginSummary.totalNtlPos) / Number(account.marginSummary.accountValue)
+
 console.log(`All positions value  $ ${new NiceNumber(account.marginSummary.totalNtlPos).toSimpleCurrency().padStart(7)}`)
 console.log(`Total unrealized PnL $ ${new NiceNumber(totalUnrealizedPnl).toSimpleCurrency().padStart(7)}`)
 console.log(`Net account size     $ ${new NiceNumber(account.marginSummary.accountValue).toSimpleCurrency().padStart(7)}`)
+console.log(`Leverage               ${leverage.toFixed(2).padStart(7)}`)

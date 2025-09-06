@@ -1,4 +1,3 @@
-import * as hl from '@nktkas/hyperliquid'
 import { TablePrinter } from '@bobanm/table-printer'
 import { NiceDate, NiceNumber } from '@bobanm/nice-utils'
 import { infoClient } from '../clients'
