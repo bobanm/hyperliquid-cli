@@ -1,5 +1,5 @@
 import { TablePrinter } from '@bobanm/table-printer'
-import { NiceNumber } from '@bobanm/nice-utils'
+import { NiceDate, NiceNumber } from '@bobanm/nice-utils'
 import { infoClient } from '../clients'
 import credentials from '../../input/credentials.toml'
 
@@ -10,7 +10,7 @@ if (!account) {
     process.exit()
 }
 
-console.log(new Date(account.time).toLocaleString())
+console.log(new NiceDate(account.time).toFineString(true, true))
 
 let totalUnrealizedPnl = 0
 
